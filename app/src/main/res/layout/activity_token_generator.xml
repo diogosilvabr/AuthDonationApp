@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TokenGeneratorActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tokenContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tokenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="none"
+        android:clickable="false"
+        android:textSize="60sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:focusable="false"
+        app:layout_constraintBottom_toTopOf="@+id/ampulheta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ampulheta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_ampulheta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tokenText" />
+
+    <TextView
+        android:id="@+id/dadosBanco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="none"
+        android:clickable="false"
+        android:textSize="60sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:focusable="false"
+        app:layout_constraintBottom_toTopOf="@+id/ampulheta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/drawer_menu" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
