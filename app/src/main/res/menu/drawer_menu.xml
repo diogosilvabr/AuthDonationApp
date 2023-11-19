@@ -5,6 +5,5 @@
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_logout"
             android:title="Logout" />
-        <!-- Adicione outros itens de menu aqui se necessário -->
     </group>
 </menu>
