@@ -1,4 +1,4 @@
-package com.donation.authdonationtest
+ipackage com.donation.authdonationtest
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Configura os inputs de email e senha e o botão de login
         setupLoginInterface()
 
         loginButton.setOnClickListener {
@@ -53,6 +52,6 @@ class MainActivity : AppCompatActivity() {
     private fun navigateToTokenGenerator() {
         val intent = Intent(this, TokenGeneratorActivity::class.java)
         startActivity(intent)
-        finish() // Finaliza a MainActivity
+        finish()
     }
 }
