@@ -39,16 +39,13 @@ class TokenGeneratorActivity : AppCompatActivity() {
         }
 
         countDownTimer = object : CountDownTimer(30000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                // Atualize a imagem da ampulheta aqui, se necessário.
+            override fun onTick(millisUntilFinished: Long) 
             }
 
             override fun onFinish() {
                 generateNewToken()
             }
         }.start()
-
-        // Restaura o token se houver um estado salvo
         savedInstanceState?.getString("TOKEN")?.let {
             currentToken = it
             tokenTextView.text = it
@@ -57,7 +54,6 @@ class TokenGeneratorActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        // Salva o token atual no estado de instância
         outState.putString("TOKEN", currentToken)
     }
 
@@ -65,11 +61,10 @@ class TokenGeneratorActivity : AppCompatActivity() {
         val random = Random()
         currentToken = String.format("%06d", random.nextInt(999999))
         tokenTextView.text = currentToken
-        countDownTimer.start() // Reinicia o contador após terminar
+        countDownTimer.start()
     }
 
     private fun logoutUser() {
-        // Limpa informações do usuário e vai para a tela de login
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
@@ -85,6 +80,6 @@ class TokenGeneratorActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        countDownTimer.cancel() // Cancela o timer para evitar vazamentos de memória
+        countDownTimer.cancel()
     }
 }
